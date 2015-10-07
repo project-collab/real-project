@@ -40,10 +40,13 @@ gulp.task('uglify', function() {
 
 	// compress the js files
 	.pipe(uglify())
+
+	// on error invoke err func
+	//.on('error', onError)
 	
 	// output js into js dir
 	.pipe(gulp.dest('./_/js'))
-	
+
 	// add to browsersync stream & live reload using BrowserSync
 	.pipe( browserSync.stream() );
 
@@ -76,3 +79,8 @@ gulp.task('sass', function() {
 
 // Create Gulp Default Task
 gulp.task('default', ['serve']);
+
+// function onError(err) {
+//   console.log(err);
+//   this.emit('end');
+// }

@@ -17,16 +17,16 @@ $header_height 			: 			150px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
-  a  
-    color: $link  	
-    &:visited  
-      color: $visit  	
-      
-    &:hover  
-      color: $hover  	   
-      
-    &:active  
-      color: $active  	
+	a  
+		color: $link  	 
+		&:visited  
+			color: $visit  	
+
+	&:hover  
+		color: $hover  	   
+
+	&:active  
+		color: $active  	
 
 
 //extended/helper classes
@@ -106,7 +106,9 @@ section
 
 #header
 	background: $red
-	height: $header_height
+	
+	.container
+		height: $header_height
 	
 	.branding
 		@include span-columns(2)
@@ -114,69 +116,71 @@ section
 		a
 			display: block
 
-		.logo
-			text-indent: -1000px
-			background: 
-				image: url("../images/logo.svg")
-				repeat: no-repeat
-				position: center
-				size: contain
-			height: $header_height  
-			margin: 0
+/*
+
+/		.logo
+/ 			text-indent: -1000px
+/ 			background: 
+/ 				image: url("../images/logo.svg")
+/ 				repeat: no-repeat
+/ 				position: center
+/ 				size: contain
+/ 			height: $header_height  
+/ 			margin: 0
 		
-#navbar
-	@include span-columns(10)
+/ #navbar
+/ 	@include span-columns(10)
 
-	*
-		height: inherit
+/ 	*
+/ 		height: inherit
 
-	@include direction-context(right-to-left)  
-		.nav-wrap
-			@include span-columns(10)
+/ 	@include direction-context(right-to-left)  
+/ 		.nav-wrap
+/ 			@include span-columns(10)
 
-	ul
-		height: $header_height
-		margin: 0
-		padding: 0
-		float: left
+/ 	ul
+/ 		height: $header_height
+/ 		margin: 0
+/ 		padding: 0
+/ 		float: left
 
-	li
-		display: inline-block
-		@extend .transition
-		@include links($dark_red, $dark_red, white, white)
+/ 	li
+/ 		display: inline-block
+/ 		@extend .transition
+/ 		@include links($dark_red, $dark_red, white, white)
 
-		.home
-			background: $mid_red
+/ 		.home
+/ 			background: $mid_red
 
-		&:hover
-			background: $mid_red
+/ 		&:hover
+/ 			background: $mid_red
 
-	a
-		font-size: 16px
-		text-transform: uppercase
-		text-decoration: none
-		padding: 30px
-		vertical-align: middle
-		display: table-cell
+/ 	a
+/ 		font-size: 16px
+/ 		text-transform: uppercase
+/ 		text-decoration: none
+/ 		padding: 30px
+/ 		vertical-align: middle
+/ 		display: table-cell
 
-#header-search-bar
-	height: 80px
-	padding: 10px 0
-	background: $dark_gray
+/ #header-search-bar
+/ 	height: 80px
+/ 	padding: 10px 0
+/ 	background: $dark_gray
 
-	@include direction-context(right-to-left)  
-		form
-			@include span-columns(6)
+/ 	@include direction-context(right-to-left)  
+/ 		form
+/ 			@include span-columns(6)
 
-			label
-				text-indent: -1000px
-				color: $dark_gray
-				height: auto
+/ 			label
+/ 				text-indent: -1000px
+/ 				color: $dark_gray
+/ 				height: auto
 
-					span 
-						display: none
+/ 					span 
+/ 						display: none
 
-			.search-field
-				width: 100%
-				max-width: 260px
-				padding: 1rem 2rem 1rem 4rem
+/ 			.search-field
+/ 				width: 100%
+/ 				max-width: 260px
+/ 				padding: 1rem 2rem 1rem 4rem
